@@ -10,6 +10,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light hlissner/zsh-autopair
 zinit light Aloxaf/fzf-tab
 
 # Add snippets
@@ -93,7 +94,6 @@ alias 777='chmod -R 777'
 alias h="history | grep "
 alias p="ps aux | grep "
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
-alias s="find . | grep "
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 alias checkcommand="type -t"
 alias openports='netstat -nape --inet'
@@ -123,17 +123,17 @@ export BEMENU_BACKEND="wayland"
 alias llama2="ollama run llama2"
 alias llama3="ollama run llama3"
 alias mistral="ollama run mistral"
+# Never gonna give you up
 alias rickroll="curl ascii.live/can-you-hear-me"
 alias btw="neofetch -L | lolcat -F 0.4 -S 12 && echo 'I use Arch.' | lolcat -F 1.8 -S 7"
-alias BTW="icat btw.png && echo 'I use arch.' | lolcat -F 1"
-export PATH="$PATH:/usr/local/bin/pico-8"
+alias BTW="icat btw.png && echo 'I use arch.' | lolcat -F 1.8"
 export MOZ_ENABLE_WAYLAND=1
 alias rmv="rm -rf"
 alias srmv="sudo rm -rf"
 alias duh="du -h"
 alias play="mpv"
 alias icat="kitten icat"
-alias joke="~/dadjoke-cli/dadjoke"
+alias joke='curl -H "Accept: text/plain" https://icanhazdadjoke.com/; echo'
 alias umatrix="unimatrix -s 96"
 alias ff="fastfetch"
 alias nf="neofetch"
@@ -144,15 +144,15 @@ alias e="edit"
 alias v="vim"
 alias edit="nvim"
 alias bad-apple="npm start --prefix ~/Bad-Apple/"
-alias asm="~/asm.sh"
+# cmatrix does not support terminal color schemes, so we alias it to a similar alternative instead
 alias cmatrix="unimatrix -l o -s 96"
 alias Code="cd ~/Code; nvim"
-source ~/.zsh-autopair/autopair.zsh
-autopair-init
 unset 'AUTOPAIR_PAIRS[ ]'
 alias parrot="curl parrot.live"
 alias christmastree="curl https://raw.githubusercontent.com/sergiolepore/ChristBASHTree/master/tree-EN.sh | bash"
+# To edit files that need elevated privileges
 alias sn="sudo nvim"
 alias nh="nethack"
 alias hjkl="vim"
+# Disabled because of p10k instant prompt (instant prompt does not support output on shell startup)
 # echo "I use Arch btw" | lolcat -F 1.4
